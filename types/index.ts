@@ -17,7 +17,17 @@ export interface Message {
   response?: string;
   errorMessage?: string;
 }
-
+export interface Notification {
+  id: number;
+  category: "HUB" | "KSEF";
+  level: "SUCCESS" | "ERROR" | "WARNING" | "INFO";
+  title: string;
+  message: string;
+  details?: string;
+  isRead: boolean;
+  createdAt: string;
+  readAt?: string;
+}
 export interface MessageResponse {
   messageId: string;
   timestamp: string;

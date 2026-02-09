@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { StatusCards } from "@/components/status-cards";
 import { MessagesTable } from "@/components/messages-table";
 import { MessageDetailDialog } from "@/components/message-detail-dialog";
+import { NotificationBell } from "@/components/notification-bell";
+import { HubControlPanel } from "@/components/hub-control-panel";
 import { Button } from "@/components/ui/button";
 import { RefreshCw } from "lucide-react";
 import type { HubStatus, Message } from "@/types";
@@ -82,13 +84,18 @@ export default function Home() {
               Monitoring i zarządzanie hubem KSeF
             </p>
           </div>
-          <Button onClick={handleRefresh} disabled={isLoading}>
-            <RefreshCw
-              className={`h-4 w-4 mr-2 ${isLoading ? "animate-spin" : ""}`}
-            />
-            Odśwież
-          </Button>
+          <div className="flex items-center gap-2">
+            <NotificationBell />
+            <Button onClick={handleRefresh} disabled={isLoading}>
+              <RefreshCw
+                className={`h-4 w-4 mr-2 ${isLoading ? "animate-spin" : ""}`}
+              />
+              Odśwież
+            </Button>
+          </div>
         </div>
+
+        <HubControlPanel />
 
         <StatusCards status={status} />
 

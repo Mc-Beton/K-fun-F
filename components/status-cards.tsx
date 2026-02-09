@@ -23,7 +23,10 @@ export function StatusCards({ status }: StatusCardsProps) {
               {status.online ? "Online" : "Offline"}
             </Badge>
           </div>
-          <p className="text-xs text-muted-foreground mt-2">
+          <p
+            className="text-xs text-muted-foreground mt-2"
+            suppressHydrationWarning
+          >
             Ostatnia aktualizacja:{" "}
             {new Date(status.lastUpdate).toLocaleTimeString("pl-PL")}
           </p>
