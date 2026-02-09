@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Faktura xmlns="http://crd.gov.pl/wzor/2023/06/29/12648/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+  <!-- NAGŁÓWEK FAKTURY -->
+  <Naglowek>
+    <KodFormularza kodSystemowy="FA(3)" wersjaSchemy="1-0E">FA</KodFormularza>
+    <WariantFormularza>3</WariantFormularza>
+    <DataWytworzeniaFa>2026-02-09</DataWytworzeniaFa>
+    <SystemInfo>KSeF Hub v2.0</SystemInfo>
+  </Naglowek>
+  
+  <!-- PODMIOT 1 - SPRZEDAWCA (pełne dane) -->
+  <Podmiot1>
+    <DaneIdentyfikacyjne>
+      <NIP>1234567890</NIP>
+      <Nazwa>Przykładowa Firma Sp. z o.o.</Nazwa>
+    </DaneIdentyfikacyjne>
+    <Adres>
+      <KodKraju>PL</KodKraju>
+      <AdresL1>ul. Testowa 15</AdresL1>
+      <KodPocztowy>00-950</KodPocztowy>
+      <Miejscowosc>Warszawa</Miejscowosc>
+    </Adres>
+    <AdresEmail>kontakt@przykladowafirma.pl</AdresEmail>
+    <NrTelefonu>+48123456789</NrTelefonu>
+  </Podmiot1>
+  
+  <!-- PODMIOT 2 - NABYWCA (WYMAGANE!) -->
+  <Podmiot2>
+    <DaneIdentyfikacyjne>
+      <NIP>9876543210</NIP>
+      <Nazwa>Firma Nabywca Sp. z o.o.</Nazwa>
+    </DaneIdentyfikacyjne>
+    <Adres>
+      <KodKraju>PL</KodKraju>
+      <AdresL1>ul. Nabywcy 10</AdresL1>
+      <KodPocztowy>02-222</KodPocztowy>
+      <Miejscowosc>Warszawa</Miejscowosc>
+    </Adres>
+    <AdresEmail>zakupy@nabywca.pl</AdresEmail>
+  </Podmiot2>
+  
+  <!-- FA - DANE FAKTURY -->
+  <Fa>
+    <KodWaluty>PLN</KodWaluty>
+    
+    <!-- P_1 - Data wystawienia faktury -->
+    <P_1>2026-02-09</P_1>
+    
+    <!-- P_2 - Numer faktury -->
+    <P_2>FV/2026/02/001</P_2>
+    
+    <!-- P_6 - Data sprzedaży (lub zakończenia sprzedaży) -->
+    <P_6>2026-02-09</P_6>
+    
+    <!-- KWOTY NETTO I VAT DLA POSZCZEGÓLNYCH STAWEK -->
+    
+    <!-- P_13_1 - Wartość netto dla stawki 23% -->
+    <P_13_1>1000.00</P_13_1>
+    
+    <!-- P_14_1 - Kwota VAT dla stawki 23% -->
+    <P_14_1>230.00</P_14_1>
+    
+    <!-- Opcjonalnie dla innych stawek:
+    <P_13_2> - stawka 8%
+    <P_14_2> - VAT dla 8%
+    <P_13_3> - stawka 5%
+    <P_14_3> - VAT dla 5%
+    <P_13_7> - stawka zw (zwolniona)
+    itp.
+    -->
+    
+    <!-- P_15 - Suma wartości brutto -->
+    <P_15>1230.00</P_15>
+    
+    <!-- ADNOTACJE (czy faktura ma specjalne właściwości) -->
+    <Adnotacje>
+      <!-- P_16 - Metoda kasowa: 1=TAK, 2=NIE -->
+      <P_16>2</P_16>
+      
+      <!-- P_17 - Samofakturowanie: 1=TAK, 2=NIE -->
+      <P_17>2</P_17>
+      
+      <!-- P_18 - Odwrotne obciążenie: 1=TAK, 2=NIE -->
+      <P_18>2</P_18>
+      
+      <!-- P_19 - MPP (Mechanizm podzielonej płatności): 1=TAK, 2=NIE -->
+      <P_19>2</P_19>
+    </Adnotacje>
+    
+    <!-- Rodzaj faktury -->
+    <RodzajFaktury>VAT</RodzajFaktury>
+    
+    <!-- WARUNKI PŁATNOŚCI -->
+    <TerminPlatnosci>
+      <Termin>2026-02-23</Termin>
+    </TerminPlatnosci>
+    
+    <!-- FORMA PŁATNOŚCI -->
+    <!-- 1=gotówka, 2=karta, 6=przelew, 7=czek -->
+    <FormaPlatnosci>6</FormaPlatnosci>
+    
+    <!-- NUMER RACHUNKU BANKOWEGO (opcjonalnie) -->
+    <NumerRachunkuBankowego>12 1234 5678 9012 3456 7890 1234</NumerRachunkuBankowego>
+  </Fa>
+  
+  <!-- FAWIERSZ - POZYCJE FAKTURY (można wiele) -->
+  <FaWiersz>
+    <NrWierszaFa>1</NrWierszaFa>
+    
+    <!-- P_7 - Nazwa towaru/usługi -->
+    <P_7>Usługa konsultingowa IT - 100 godzin</P_7>
+    
+    <!-- P_8B - Jednostka miary (nazwa własna) -->
+    <P_8B>godz</P_8B>
+    
+    <!-- P_9A - Ilość -->
+    <P_9A>100.00</P_9A>
+    
+    <!-- P_11 - Wartość sprzedaży netto pozycji -->
+    <P_11>1000.00</P_11>
+    
+    <!-- P_11A - Cena jednostkowa netto (opcjonalnie) -->
+    <P_11A>10.00</P_11A>
+    
+    <!-- P_12 - Stawka podatku VAT -->
+    <P_12>23</P_12>
+    
+    <!-- Opcjonalnie dla konkretnych branż:
+    <P_12A_XIII> - GTU (Grupy Towarowe)
+    <CN> - Kod CN (dla towarów)
+    <PKWIU> - Kod PKWiU (dla usług)
+    -->
+  </FaWiersz>
+  
+  <!-- Można dodać więcej pozycji -->
+  <FaWiersz>
+    <NrWierszaFa>2</NrWierszaFa>
+    <P_7>Hosting serwera - miesięczny abonament</P_7>
+    <P_8B>miesiąc</P_8B>
+    <P_9A>1.00</P_9A>
+    <P_11>200.00</P_11>
+    <P_11A>200.00</P_11A>
+    <P_12>23</P_12>
+  </FaWiersz>
+  
+</Faktura>
